@@ -29,7 +29,8 @@ L.Icon.Default.mergeOptions({
 });
 function Home() {
   const theme = useTheme();
-  const isSmallScreen = useMediaQuery(theme.breakpoints.down("lg"));
+  const isSmallScreen = useMediaQuery(theme.breakpoints.down("md"));
+  const isMedScreen = useMediaQuery(theme.breakpoints.down("lg"));
   const position = [32.302143445986665, 35.1238771758256];
   return (
     <div className="w-full flex justify-center flex-col">
@@ -38,7 +39,7 @@ function Home() {
         className="bg2 w-full py-10 flex justify-center items-center min-h-40 hero relative text-center"
       >
         <div className="flex flex-col gap-6 z-40 items-center">
-          <p className="txt3 text-xl lg:text-2xl max-w-2xl w-2/3 lg:w-full">
+          <p className="txt3 text-xl lg:text-2xl max-w-2xl w-2/3 md:w-full">
             حلول اتصالات ومشاريع بنية تحتية تنفذ بمعايير عالمية وكفاءة محلية
           </p>
           <div className="flex gap-3 w-2/3 lg:w-1/2 text-xs lg:text-md justify-center font-bold">
@@ -67,7 +68,7 @@ function Home() {
             modules={[Autoplay]}
             className="h-[350px]"
             spaceBetween={10}
-            slidesPerView={isSmallScreen ? 2 : 5}
+            slidesPerView={isSmallScreen ? 2 : isMedScreen ? 3 : 5}
             loop={true}
             autoplay={{
               delay: 2000,
