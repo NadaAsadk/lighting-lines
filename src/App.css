@@ -55,7 +55,7 @@ body {
   position: relative;
   background-attachment: fixed;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
 }
 
@@ -212,4 +212,45 @@ body {
   height: 300px;
   border-radius: 20px;
   z-index: 0 !important;
+}
+
+.about-card {
+  position: relative;
+  background-color: #ffffff;
+  padding: 18px;
+  border-radius: 20px;
+  box-shadow: 0px 3px 2px 1px #0000001a;
+  border-right: 6px solid #76bc21;
+  overflow: hidden;
+  transition: color 0.4s ease-in-out;
+}
+
+.about-card h3,
+.about-card p {
+  color: #000000;
+  position: relative;
+  z-index: 2;
+  transition: color 0.3s ease-in-out;
+}
+
+.about-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 0%;
+  height: 100%;
+  background-color: #76bc21;
+  transition: width 0.5s ease-in-out;
+  z-index: 1;
+}
+
+.about-card:hover::before {
+  width: 100%;
+  left: 0;
+}
+
+.about-card:hover h3,
+.about-card:hover p {
+  color: #ffffff;
 }

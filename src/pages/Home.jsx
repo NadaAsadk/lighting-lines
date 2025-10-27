@@ -21,44 +21,42 @@ import { Autoplay } from "swiper/modules";
 
 import "swiper/css";
 import { useMediaQuery, useTheme } from "@mui/material";
-// Fix the default icon issue
+
 L.Icon.Default.mergeOptions({
   iconRetinaUrl,
   iconUrl,
   shadowUrl,
 });
+
 function Home() {
   const theme = useTheme();
   const isSmallScreen = useMediaQuery(theme.breakpoints.down("md"));
   const isMedScreen = useMediaQuery(theme.breakpoints.down("lg"));
   const position = [32.302143445986665, 35.1238771758256];
+
   return (
     <div className="w-full flex justify-center flex-col">
-      <section
-        id="Home"
-        className="bg2 w-full py-10 flex justify-center items-center min-h-40 hero relative text-center"
-      >
+      <section id="Home" className="w-full hero py-10 lg:py-30">
         <div className="flex flex-col gap-6 z-40 items-center">
-          <p className="txt3 text-xl lg:text-2xl max-w-2xl w-2/3 md:w-full">
+          <p className="txt3 text-xl md:text-3xl lg:text-4xl  w-2/3 lg:w-full text-center font-bold">
             حلول اتصالات ومشاريع بنية تحتية تنفذ بمعايير عالمية وكفاءة محلية
           </p>
-          <div className="flex gap-3 w-2/3 lg:w-1/2 text-xs lg:text-md justify-center font-bold">
+          <div className="flex gap-3 w-full lg:w-1/2 text-xs lg:text-md justify-center font-bold">
             <a
               href="#Services"
-              className="bg3 txt2 p-3 rounded-3xl txt1 w-1/2 text-center hover:scale-105 transition-transform"
+              className="bg3 txt2 p-3 rounded-3xl txt1 w-1/3 text-center hover:scale-105 transition-transform"
             >
               اكتشف خدماتنا
             </a>
             <a
               href="#About"
-              className="bg2 txt3 p-3 rounded-3xl txt1 w-1/2 text-center hover:scale-105 transition-transform"
+              className="bg2 txt3 p-3 rounded-3xl txt1 w-1/3 text-center hover:scale-105 transition-transform"
             >
               من نحن
             </a>
           </div>
         </div>
-
-        <span className="absolute top-0 right-0 h-full w-full opacity-65 bg1 z-0"></span>
+        <span className="absolute top-0 right-0 h-full w-full opacity-20 bg1 z-0"></span>
       </section>
 
       <section id="Services" className="flex justify-center py-10">
@@ -184,7 +182,7 @@ function Home() {
                 الاتصالات والمؤسسات الحكومية والخاصة.
               </p>
 
-              <div className="bg-white p-6 rounded-xl shadow-md border-r-4 border-[#76bc21]">
+              <div className="about-card">
                 <h3 className="text-2xl font-semibold text-gray-800 mb-3">
                   الرؤية
                 </h3>
@@ -195,7 +193,7 @@ function Home() {
                 </p>
               </div>
 
-              <div className="bg-white p-6 rounded-xl shadow-md border-r-4 border-[#76bc21]">
+              <div className="about-card">
                 <h3 className="text-2xl font-semibold text-gray-800 mb-3">
                   الرسالة
                 </h3>
@@ -312,26 +310,26 @@ function Home() {
               </p>
             </div>
 
-            <div className="txt3 flex flex-col justify-start gap-3 border-t-2 lg:border-0 pt-4">
+            <div className="txt3 flex flex-col gap-3 border-t-2 lg:border-0 pt-4">
               <h3 className="text-2xl font-bold">مقر الشركة</h3>
               <p className="text-md lg:text-lg">
-                المقر الرئيسي: عنبتا – بالقرب من دوار البلدية – مبنى لايتينغ
+                المقر الرئيسي: عنبتا – بالقرب من دوار الشرطة – مبنى لايتينغ
                 لاينز
               </p>
-              <MapContainer
-                center={position}
-                zoom={15}
-                scrollWheelZoom={true}
-                className="map-container"
-              >
-                <TileLayer
-                  attribution='&copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors'
-                  url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-                />
-                <Marker position={position}>
-                  <Popup>شركة لايتينغ لاينز</Popup>
-                </Marker>
-              </MapContainer>
+                <MapContainer
+                  center={position}
+                  zoom={15}
+                  scrollWheelZoom={true}
+                  className="map-container"
+                >
+                  <TileLayer
+                    attribution='&copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors'
+                    url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+                  />
+                  <Marker position={position}>
+                    <Popup>شركة لايتينغ لاينز</Popup>
+                  </Marker>
+                </MapContainer>
             </div>
           </div>
         </div>
