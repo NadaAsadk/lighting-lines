@@ -287,12 +287,12 @@ function Home() {
               <p className="text-md lg:text-lg">
                 الهاتف:
                 <a
-                  href="tel:+970599579901"
+                  href="tel:092665555"
                   className="text-blue-600 hover:underline"
                   dir="ltr"
                 >
                   {" "}
-                  0599579901
+                  092665555
                 </a>
               </p>
               <p className="text-md lg:text-lg">
@@ -316,20 +316,20 @@ function Home() {
                 المقر الرئيسي: عنبتا – بالقرب من دوار الشرطة – مبنى لايتينغ
                 لاينز
               </p>
-                <MapContainer
-                  center={position}
-                  zoom={15}
-                  scrollWheelZoom={true}
-                  className="map-container"
-                >
-                  <TileLayer
-                    attribution='&copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors'
-                    url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-                  />
-                  <Marker position={position}>
-                    <Popup>شركة لايتينغ لاينز</Popup>
-                  </Marker>
-                </MapContainer>
+              <MapContainer
+                center={position}
+                zoom={15}
+                scrollWheelZoom={true}
+                className="map-container"
+              >
+                <TileLayer
+                  attribution='&copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors'
+                  url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+                />
+                <Marker position={position}>
+                  <Popup>شركة لايتينغ لاينز</Popup>
+                </Marker>
+              </MapContainer>
             </div>
           </div>
         </div>
